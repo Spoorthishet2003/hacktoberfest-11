@@ -1,0 +1,128 @@
+//program to perform string operations using ArrayList.
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+public class ArrayListExample {
+public static void main(String[] args) throws Exception, Exception {
+
+ArrayList&lt;String&gt; obj = new ArrayList&lt;String&gt;();
+//DataInputStream in = new DataInputStream(System.in);
+BufferedReader d = new BufferedReader(new
+
+InputStreamReader(System.in));
+int c, ch;
+int i, j;
+String str, str1;
+do {
+System.out.println(&quot;STRING MANIPULATION&quot;);
+System.out.println(&quot;******************************&quot;);
+System.out.println(&quot;1. Append at end \n2. Insert at particular
+
+index
+
+\n3.
+Search&quot;);
+System.out.println(&quot;4. List string that starting with
+
+letter&quot;);
+
+System.out.println(&quot;5. Size \n6. Remove \n7. Sort \n8.
+
+Display\n&quot;);
+
+System.out.println(&quot;Enter the choice &quot;);
+c = Integer.parseInt(d.readLine());
+switch (c) {
+case 1: {
+System.out.println(&quot;Enter the string: &quot;);
+str = d.readLine();
+obj.add(str);
+break;
+}
+case 2: {
+System.out.println(&quot;Enter the string: &quot;);
+str = d.readLine();
+System.out.println(&quot;Specify the index/position to
+
+insert: &quot;);
+
+i = Integer.parseInt(d.readLine());
+obj.add(i - 1, str);
+System.out.println(&quot;The array list has following
+
+elements: &quot; +
+
+obj);
+
+break;
+}
+case 3: {
+System.out.println(&quot;Enter the string to search: &quot;);
+str = d.readLine();
+j = obj.indexOf(str);
+if (j == -1)
+System.out.println(&quot;Element not found!!!&quot;);
+else
+System.out.println(&quot;Index of: &quot; + str + &quot; is &quot; +
+
+j);
+
+break;
+}
+case 4: {
+System.out.println(&quot;Enter the character to List string
+
+that
+
+starts with specified character: &quot;);
+
+str = d.readLine();
+for (i = 0; i &lt; (obj.size() - 1); i++) {
+str1 = obj.get(i);
+if (str1.startsWith(str)) {
+
+System.out.println(str1);
+}
+}
+break;
+}
+case 5: {
+System.out.println(&quot;Size of the list &quot; + obj.size());
+break;
+}
+case 6: {
+System.out.println(&quot;Enter the element to remove: &quot;);
+str = d.readLine();
+if (obj.remove(str)) {
+System.out.println(&quot;Element Removed: &quot; + str);
+} else {
+System.out.println(&quot;Element not present!!!&quot;);
+}
+break;
+}
+case 7: {
+Collections.sort(obj);
+System.out.println(&quot;The array list has following
+
+elements: &quot; +
+
+obj);
+
+break;
+}
+case 8: {
+System.out.println(&quot;The array list has following
+
+elements: &quot; +
+
+obj);
+
+break;
+}
+}
+System.out.println(&quot;enter 0 to break and 1 to continue: &quot;);
+ch = Integer.parseInt(d.readLine());
+} while (ch == 1);
+}
+}
